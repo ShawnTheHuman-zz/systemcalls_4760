@@ -18,19 +18,22 @@ using namespace std;
 int main ( int argc, char **argv ){
 	
 	extern char *optarg;
-	
-	char fileName = "logfile.text";
+	int op;
+
+	const char *fileName = "logfile.text";
 	int secs = 1;
 
-	while((op = gettopt( argc, argv, "ht:")) != -1 ){
-		switch(opt){
+	while((op = getopt( argc, argv, "ht:")) != -1 ){
+		switch(op){
 			case 'h':
 				cout << "help message\n";
 				exit( 0 );
 			break;
 			
 			case 't':
+				cout << "seconds\n";
 				secs = atoi(optarg);
+				exit( 1 );
 			break;
 
 			case '?':
