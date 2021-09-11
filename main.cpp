@@ -20,7 +20,7 @@ int main ( int argc, char **argv ){
 	extern char *optarg;
 	int op;
 
-	const char *fileName = "logfile.text";
+	const char *fileName = "messages.log";
 	int secs = 1;
 
 	while((op = getopt( argc, argv, "ht:")) != -1 ){
@@ -33,6 +33,7 @@ int main ( int argc, char **argv ){
 			case 't':
 				cout << "seconds\n";
 				secs = atoi(optarg);
+				cout << "seconds: " << secs << endl;
 				exit( 1 );
 			break;
 
